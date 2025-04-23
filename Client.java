@@ -11,8 +11,8 @@ public class Client {
         Vehicle vehicle2 = new Vehicle("MH-02-5678", "Bike");
 
         // create drivers
-        Driver driver1 = new Driver("John", location1, vehicle1);
-        Driver driver2 = new Driver("Alice", location2, vehicle2);
+        Driver driver1 = new Driver("John", location1, vehicle1,true);
+        Driver driver2 = new Driver("Alice", location2, vehicle2,true);
 
         // create passengers
         Passenger passenger1 = new Passenger("Bob", location3);
