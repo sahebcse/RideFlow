@@ -1,11 +1,19 @@
-public class Location {
-   private double latitude;
-   private double longitude;
+package RideCalculation;
 
+public class Location {
+    private double latitude;
+    private double longitude;
 
     public Location(double latitude, double longitude) {
         this.latitude = latitude;
         this.longitude = longitude;
+    }
+
+    //distance calculation
+    public double calcDistance(Location locationTwo) {
+        double dx = this.latitude - locationTwo.latitude;
+        double dy = this.longitude - locationTwo.longitude;
+        return Math.sqrt(dx * dx + dy * dy);
     }
 
     public double getLatitude() {

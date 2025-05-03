@@ -16,7 +16,7 @@ Your task is to design a clean, maintainable, and scalable solution using SOLID 
 * Explanation of how SOLID principles are applied and why certain design patterns (e.g., Strategy, Observer, Mediator) were used.
 * Source Code for the ride-sharing application with clean, modular, and maintainable code.
 * Test Cases to verify correct functionality of the ride-matching system, fare calculation, and notification system.
-* Class Diagram that showcases how classes and interfaces are structured, including how design patterns are applied. (HomeWork)
+* Class Diagram that showcases how classes and interfaces are structured, including how design patterns are applied.
 
 ## Functional Requirements
 

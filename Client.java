@@ -1,3 +1,13 @@
+import Fare.LuxuryFareStrategy;
+import Fare.StandardFareStrategy;
+import RideCalculation.Location;
+import RideCalculation.RideMatchingSystem;
+import User.Driver;
+import User.Passenger;
+import Vehicle.Bike;
+import Vehicle.Car;
+import Vehicle.Vehicle;
+
 public class Client {
 
     public static void main(String[] args) {
@@ -7,36 +17,27 @@ public class Client {
         Location location3 = new Location(13.0827, 80.2707); // Chennai
 
         // create vehicles
-        Vehicle vehicle1 = new Vehicle("DL-01-1234", "Car");
-        Vehicle vehicle2 = new Vehicle("MH-02-5678", "Bike");
+        Vehicle vehicle1 = new Car("DL-01-1234");
+        Vehicle vehicle2 = new Bike("MH-02-5678");
 
         // create drivers
-        Driver driver1 = new Driver("John", location1, vehicle1,true);
-        Driver driver2 = new Driver("Alice", location2, vehicle2,true);
+        Driver driver1 = new Driver("John", "john@gmail.com", location1, vehicle1);
+        Driver driver2 = new Driver("Alice", "alice@gmail.com", location2, vehicle2);
 
         // create passengers
-        Passenger passenger1 = new Passenger("Bob", location3);
-        Passenger passenger2 = new Passenger("Charlie", location1);
+        Passenger passenger1 = new Passenger("Bob", "bob@gmail.com", location3);
+        Passenger passenger2 = new Passenger("Charlie", "charlie@gmail.com", location1);
 
-        RideSharingAppService rideSharingAppService = new RideSharingAppService();
+        RideMatchingSystem rideMatchingSystem = new RideMatchingSystem();
 
-        // add drivers and passengers to the service
-        rideSharingAppService.addDriver(driver1);
-        rideSharingAppService.addDriver(driver2);
-        rideSharingAppService.addPassenger(passenger1);
-        rideSharingAppService.addPassenger(passenger2);
+        //below request should show no availabele driver message
+        rideMatchingSystem.requestRide(passenger1, 10, new StandardFareStrategy());
 
-        // book rides
+        rideMatchingSystem.addDriver(driver1);
+        rideMatchingSystem.addDriver(driver2);
 
-        rideSharingAppService.bookRide(passenger1, 10.0); // Bob books a ride
-        rideSharingAppService.bookRide(passenger2, 5.0); // Charlie books a ride
-        // book a ride when no drivers are available
-        rideSharingAppService.bookRide(passenger1, 10.0); // Bob books a ride
-
-
-
-
-
+        rideMatchingSystem.requestRide(passenger1, 15, new LuxuryFareStrategy());
+        rideMatchingSystem.requestRide(passenger2, 5, new StandardFareStrategy());
 
     }
 }
