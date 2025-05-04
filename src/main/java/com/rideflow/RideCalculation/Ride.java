@@ -1,8 +1,8 @@
-package RideCalculation;
+package com.rideflow.RideCalculation;
 
-import Fare.FareStrategy;
-import User.Driver;
-import User.Passenger;
+import com.rideflow.Fare.FareStrategy;
+import com.rideflow.User.Driver;
+import com.rideflow.User.Passenger;
 
 public class Ride {
     private final Passenger passenger;

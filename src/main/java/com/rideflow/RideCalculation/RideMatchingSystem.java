@@ -1,8 +1,10 @@
-package RideCalculation;
+package com.rideflow.RideCalculation;
 
-import Fare.FareStrategy;
-import User.Driver;
-import User.Passenger;
+
+
+import com.rideflow.Fare.FareStrategy;
+import com.rideflow.User.Driver;
+import com.rideflow.User.Passenger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,11 +38,15 @@ public class RideMatchingSystem {
         double fare = ride.getFare();
 
         //notification
-        passenger.notify("Driver " + assignedDriver.getName() + " is on the way to pick you up.");
-        assignedDriver.notify("You have a new ride requst for " + ride.getFare());
+        if (assignedDriver != null) {
+            passenger.notify("Driver " + assignedDriver.getName() + " is on the way to pick you up.");
+            assignedDriver.notify("You have a new ride request for " + ride.getFare());
+            System.out.println("Ride booked for " + passenger.getName() + " with driver " + assignedDriver.getName() +
+                                       " for fare " + fare);
 
-        System.out.println("Ride booked for " + passenger.getName() + " with driver " + assignedDriver.getName() +
-                                   " for fare " + fare);
+        } else {
+            passenger.notify("No drivers available to fulfill your ride request.");
+        }
 
         //Update Ride Status :
 

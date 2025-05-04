@@ -1,3 +1,20 @@
+## Local Setup
+
+To run this project locally:
+
+```bash
+git clone https://github.com/sahebcse/RideFlow.git
+cd RideFlow
+mvn clean install
+mvn exec:java -Dexec.mainClass="com.rideflow.App"
+```
+
+## Class Diagram
+
+![Class Diagram](ClassDiagram.png)
+
+_For a more detailed view of the class diagram, see: https://miro.com/app/board/uXjVI65NLnk=/?share_link_id=782287211800_
+
 # Problem Statement - Design a Ride-Sharing Application
 
 You are tasked with designing and implementing a ride-sharing application where passengers can request rides, and drivers can be matched to them based on proximity. The application should handle different types of vehicles (such as cars, bikes, luxury cars) and support multiple fare calculation strategies. The system must notify both passengers and drivers about ride statuses and calculate the fare based on the type of ride and distance traveled.

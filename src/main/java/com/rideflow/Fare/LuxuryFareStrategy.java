@@ -1,6 +1,6 @@
-package Fare;
+package com.rideflow.Fare;
 
-import Vehicle.Vehicle;
+import com.rideflow.Vehicle.Vehicle;
 
 public class LuxuryFareStrategy implements FareStrategy {
 

@@ -1,6 +1,7 @@
-package User;
+package com.rideflow.User;
 
-import RideCalculation.Location;
+
+import com.rideflow.RideCalculation.Location;
 
 public class Passenger extends User {
     public Passenger(final String name, final String email, final Location location) {

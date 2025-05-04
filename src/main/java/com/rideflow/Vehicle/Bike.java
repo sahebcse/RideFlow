@@ -1,4 +1,4 @@
-package Vehicle;
+package com.rideflow.Vehicle;
 
 public class Bike extends Vehicle {
     public Bike(final String numberPlate) {

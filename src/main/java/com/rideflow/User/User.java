@@ -1,13 +1,14 @@
-package User;
+package com.rideflow.User;
 
-import RideCalculation.Location;
+
+import com.rideflow.RideCalculation.Location;
 
 public abstract class User {
     protected String name;
     protected String email;
     protected Location location;
 
-    public User(String name, String email, Location location) {
+    protected User(String name, String email, Location location) {
         this.name = name;
         this.email = email;
         this.location = location;

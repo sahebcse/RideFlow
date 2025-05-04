@@ -1,4 +1,4 @@
-package RideCalculation;
+package com.rideflow.RideCalculation;
 
 public enum RideStatus {
     SCHEDULED,

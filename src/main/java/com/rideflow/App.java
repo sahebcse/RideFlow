@@ -1,16 +1,19 @@
-import Fare.LuxuryFareStrategy;
-import Fare.StandardFareStrategy;
-import RideCalculation.Location;
-import RideCalculation.RideMatchingSystem;
-import User.Driver;
-import User.Passenger;
-import Vehicle.Bike;
-import Vehicle.Car;
-import Vehicle.Vehicle;
+package com.rideflow;
 
-public class Client {
+import com.rideflow.Fare.LuxuryFareStrategy;
+import com.rideflow.Fare.StandardFareStrategy;
+import com.rideflow.RideCalculation.Location;
+import com.rideflow.RideCalculation.RideMatchingSystem;
+import com.rideflow.User.Driver;
+import com.rideflow.User.Passenger;
+import com.rideflow.Vehicle.Bike;
+import com.rideflow.Vehicle.Car;
+import com.rideflow.Vehicle.Vehicle;
 
-    public static void main(String[] args) {
+public class App 
+{
+    public static void main( String[] args )
+    {
         //create 3 sample locations of india
         Location location1 = new Location(28.6139, 77.2090); // Delhi
         Location location2 = new Location(19.0760, 72.8777); // Mumbai
@@ -38,6 +41,5 @@ public class Client {
 
         rideMatchingSystem.requestRide(passenger1, 15, new LuxuryFareStrategy());
         rideMatchingSystem.requestRide(passenger2, 5, new StandardFareStrategy());
-
     }
 }

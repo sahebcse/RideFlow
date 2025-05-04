@@ -1,7 +1,8 @@
-package User;
+package com.rideflow.User;
 
-import RideCalculation.Location;
-import Vehicle.Vehicle;
+
+import com.rideflow.RideCalculation.Location;
+import com.rideflow.Vehicle.Vehicle;
 
 public class Driver extends User {
 
